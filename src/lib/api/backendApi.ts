@@ -78,12 +78,6 @@ export const adviceApi = {
     const response = await apiClient.post<AdviceApiResponse>(ADVICE_ENDPOINTS.GENERATE, data)
     return response.data
   },
-
-  // 조언 히스토리 가져오기 (향후 확장)
-  getHistory: async () => {
-    const response = await apiClient.get(ADVICE_ENDPOINTS.GET_HISTORY)
-    return response.data
-  },
 }
 
 export default apiClient

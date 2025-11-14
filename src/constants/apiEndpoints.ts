@@ -13,7 +13,6 @@ export const WEATHER_ENDPOINTS = {
 // 조언 API 엔드포인트
 export const ADVICE_ENDPOINTS = {
   GENERATE: '/api/advice/generate',
-  GET_HISTORY: '/api/advice/history',
 } as const
 
 // 지역 API 엔드포인트
