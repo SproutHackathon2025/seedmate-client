@@ -77,3 +77,8 @@
 | `advice_content`  | `TEXT`            | `NOT NULL`                                      | 생성된 조언 텍스트                            |
 | `request_payload` | `JSON`            | `NOT NULL`                                      | 조언 생성 시 사용된 요청 정보 (날씨, 계절 등) |
 | `generated_at`    | `TIMESTAMP`       | `NOT NULL`                                      | 조언 생성 시간                                |
+
+
+- ERD
+<img width="1062" height="720" alt="image" src="https://github.com/user-attachments/assets/ca126238-71e6-41d2-9a4a-16760cc44563" />
+
