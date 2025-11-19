@@ -1,0 +1,26 @@
+name: Deploy seedmate client
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run deploy script over SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          fingerprint: ${{ secrets.SSH_FINGERPRINT }}
+          script: |
+            bash -lc '
+              chmod +x /home/ggmuser/seedmate/deploy-seedmate-client.sh
+              /home/ggmuser/seedmate/deploy-seedmate-client.sh
+            '
