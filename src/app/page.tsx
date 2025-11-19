@@ -13,6 +13,7 @@ import { useUIStore } from '@/store/ui-store'
 import { useWeatherData } from '@/features/weather/hooks/useWeatherData'
 import { useFarmingAdvice } from '@/features/advice/hooks/useFarmingAdvice'
 import { LoadingSpinner } from '@/components/common/LoadingSpinner'
+import { BottomNotice } from '@/components/common/BottomNotice'
 
 export default function Home() {
   const { selectedRegion } = useLocationStore()
@@ -50,9 +51,7 @@ export default function Home() {
   const temperature = weatherData?.temperature || 22
   const humidity = weatherData?.humidity || 45
   const weatherCode = weatherData?.weatherCode || 'sunny'
-  const advice =
-    adviceData?.advice ||
-    '오늘은 날이 좋으니 옥외 작업을 추천합니다. 병충해도 잘 보이고 대내해 방지도 가능합니다.'
+  const advice = adviceData?.advice || ''
 
   if (isWeatherLoading && !weatherData) {
     return <LoadingSpinner />
@@ -84,11 +83,15 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="pointer-events-none fixed bottom-24 left-1/2 z-20 w-full max-w-4xl -translate-x-1/2 px-3 md:px-6">
-          <div className="pointer-events-auto rounded-[28px] border border-black/5 bg-[#ECE9E6]/95 px-6 py-5 shadow-lg md:px-8 md:py-6">
+        <div className="pointer-events-none fixed bottom-12 left-1/2 z-20 w-full max-w-4xl -translate-x-1/2 px-3 md:px-6 flex flex-col gap-y-4 items-center">
+          <div className="pointer-events-auto rounded-[28px] border border-black/5 bg-[#ECE9E6]/95 px-6 py-5 shadow-lg md:px-8 md:py-6 w-full">
             <h3 className="text-base font-bold text-[#3B9D62] md:text-lg">오늘의 농사 한마디</h3>
             <p className="mt-3 text-sm leading-relaxed text-gray-800 md:text-base">“{advice}”</p>
           </div>
+
+          <BottomNotice
+            text={`본 서비스는 참고용입니다. 실제 농사 판단은 현장 상황과 전문가의 조언을 병행하세요.`}
+          />
         </div>
 
         {weatherError && process.env.NODE_ENV === 'development' && (
