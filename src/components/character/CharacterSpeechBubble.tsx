@@ -26,7 +26,8 @@ export function CharacterSpeechBubble({
       let currentIndex = 0
       const typingInterval = setInterval(() => {
         if (currentIndex < advice.length) {
-          setDisplayedText((prev) => prev + advice[currentIndex])
+          const nextCharacter = advice[currentIndex]
+          setDisplayedText((prev) => prev + nextCharacter)
           currentIndex++
         } else {
           setIsTyping(false)
