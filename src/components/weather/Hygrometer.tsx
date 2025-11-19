@@ -22,7 +22,7 @@ export function Hygrometer({ humidity, className = '' }: HygrometerProps) {
       </div>
       <motion.span
         key={clampedHumidity}
-        className="text-lg font-semibold text-gray-900 md:text-xl"
+        className="text-md font-semibold text-gray-900 md:text-xl"
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5 }}

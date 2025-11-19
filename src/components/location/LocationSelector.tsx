@@ -30,8 +30,8 @@ export function LocationSelector({ className = '' }: LocationSelectorProps) {
     >
       <div className="flex items-center justify-between gap-3">
         <div className="text-left flex-1">
-          <h3 className="text-lg font-bold text-gray-900 mb-1">{mainLocation}</h3>
-          <p className="text-sm text-gray-600">{subLocation}</p>
+          <h3 className="text-md md:text-xl font-bold text-gray-900 mb-1">{mainLocation}</h3>
+          <p className="text-sm md:text-md text-gray-600">{subLocation}</p>
         </div>
         <div className="shrink-0 w-10 h-10 flex items-center justify-center">
           <Image

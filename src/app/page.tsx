@@ -73,12 +73,12 @@ export default function Home() {
         </div>
 
         <div className="flex min-h-screen items-end justify-center pt-44 pb-[220px] md:items-center md:pt-28">
-          <div className="flex w-full max-w-6xl flex-col items-center gap-8 px-4 md:flex-row md:items-start md:justify-center md:gap-16">
+          <div className="flex w-full max-w-6xl flex-col items-center pl-24 pr-4 md:flex-row md:items-start md:justify-center">
             <FarmerCharacter season={selectedSeason} />
             <CharacterSpeechBubble
               advice={advice}
               isLoading={isAdviceLoading}
-              className="w-full max-w-md md:max-w-xl md:-translate-y-10 md:pl-4"
+              className="w-full max-w-md md:max-w-xl md:-translate-y-10"
             />
           </div>
         </div>

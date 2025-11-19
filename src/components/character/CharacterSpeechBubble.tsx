@@ -44,15 +44,13 @@ export function CharacterSpeechBubble({
       {(advice || isLoading) && (
         <motion.div
           {...speechBubbleAnimation}
-          className={`relative rounded-[28px] border border-black/5 bg-white px-8 py-6 shadow-xl left-[-400px] top-[200px] ${className}`}
+          className={`relative left-[-340px] top-[200px] w-[92vw] max-w-[380px] rounded-2xl bg-white px-9 py-8 text-[#17334a] shadow-[0_20px_40px_rgba(23,51,74,0.15)] sm:w-auto sm:min-w-[400px] sm:px-8 sm:py-6 border-2 border-black ${className}`}
         >
-          <div className="absolute -left-3 top-1/2 h-6 w-6 -translate-y-1/2 rotate-45 border border-black/5 bg-white shadow-sm" />
-
           <div className="relative z-10">
             {isLoading ? (
               <LoadingDots />
             ) : (
-              <p className="text-base leading-relaxed text-gray-800 md:text-lg">
+              <p className="text-base leading-relaxed text-[#17334a] md:text-lg">
                 {displayedText}
                 {isTyping && (
                   <motion.span
@@ -65,6 +63,22 @@ export function CharacterSpeechBubble({
                 )}
               </p>
             )}
+          </div>
+
+          {/* Tail */}
+          <div className="absolute bottom-[15px] left-[-32px] hidden sm:block">
+            <div
+              className="h-0 w-0 border-x-transparent border-black absolute -bottom-px left-0"
+              style={{ borderBottomWidth: 17, borderLeftWidth: 32 }}
+            />
+            <div
+              className="h-0 w-0 border-x-transparent border-white absolute bottom-0 left-[2px]"
+              style={{ borderBottomWidth: 15, borderLeftWidth: 30 }}
+            />
+            <div
+              className="h-0 w-0 border-x-transparent border-black"
+              style={{ borderBottomWidth: 17, borderLeftWidth: 32 }}
+            />
           </div>
         </motion.div>
       )}

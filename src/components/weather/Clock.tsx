@@ -29,7 +29,7 @@ export function Clock({ className = '' }: ClockProps) {
       <div className="relative h-16 w-16 md:h-20 md:w-20">
         <Image src="/images/assets/clock.png" alt="시계" fill className="object-contain" />
       </div>
-      <div className="text-sm font-semibold text-gray-900 md:text-base">
+      <div className="text-md font-semibold text-gray-900 md:text-xl">
         <div>{format(currentTime, 'yyyy년')}</div>
         <div>{format(currentTime, 'MM월 dd일')}</div>
         <div>{format(currentTime, 'HH:mm')}</div>

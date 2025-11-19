@@ -20,7 +20,7 @@ export function Thermometer({ temperature, className = '' }: ThermometerProps) {
       </div>
       <motion.span
         key={temperature}
-        className="text-lg font-semibold text-gray-900 md:text-xl"
+        className="text-md font-semibold text-gray-900 md:text-xl"
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5 }}
