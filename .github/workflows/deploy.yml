@@ -21,6 +21,5 @@ jobs:
           fingerprint: ${{ secrets.SSH_FINGERPRINT }}
           script: |
             bash -lc '
-              chmod +x /home/ggmuser/seedmate/deploy-seedmate-client.sh
               /home/ggmuser/seedmate/deploy-seedmate-client.sh
             '
