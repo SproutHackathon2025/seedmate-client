@@ -24,7 +24,7 @@ export function Clock({ className = '' }: ClockProps) {
   return (
     <motion.div
       {...widgetEnterAnimation}
-      className={`flex items-center gap-4 rounded-2xl bg-[#F5F4F2] px-5 py-4 shadow-lg ${className}`}
+      className={`flex items-center gap-6 rounded-2xl bg-[#F5F4F2] px-5 py-4 shadow-lg ${className}`}
     >
       <div className="relative h-16 w-16 md:h-20 md:w-20">
         <Image src="/images/assets/clock.png" alt="시계" fill className="object-contain" />
@@ -32,7 +32,7 @@ export function Clock({ className = '' }: ClockProps) {
       <div className="text-sm font-semibold text-gray-900 md:text-base">
         <div>{format(currentTime, 'yyyy년')}</div>
         <div>{format(currentTime, 'MM월 dd일')}</div>
-        <div className="mt-1 text-lg md:text-xl">{format(currentTime, 'HH:mm')}</div>
+        <div>{format(currentTime, 'HH:mm')}</div>
       </div>
     </motion.div>
   )

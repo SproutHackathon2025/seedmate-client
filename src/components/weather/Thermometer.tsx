@@ -13,7 +13,7 @@ export function Thermometer({ temperature, className = '' }: ThermometerProps) {
   return (
     <motion.div
       {...widgetEnterAnimation}
-      className={`flex items-center gap-3 rounded-2xl bg-[#F5F4F2] px-4 py-3 shadow-lg ${className}`}
+      className={`flex items-center rounded-2xl bg-[#F5F4F2] p-3 shadow-lg ${className}`}
     >
       <div className="relative h-12 w-12">
         <Image src="/images/assets/thermometer.png" alt="온도계" fill className="object-contain" />
